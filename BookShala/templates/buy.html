@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block title%}
+Buy {{book.bname}}
+{%endblock%}
+{%block content%}
+<div class="container">
+    <form method="POST">
+        {{form.hidden_tag()}}
+        
+        {{form.addr.label()}}
+        {{form.addr(class='form-control')}}
+    
+        {{form.mop.label()}}
+        {{form.mop(class='form-control')}}
+        
+        {{form.submit(class='form-control')}}
+    
+    </form>
+</div>
+{%endblock%}
