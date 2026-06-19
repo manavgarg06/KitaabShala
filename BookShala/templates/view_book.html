@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%block title%}
+    {{book.bname}}
+{%endblock%}
+{%block content%}
+    <div class='container'>
+        
+        Name: {{book.bname}}
+        ISBN: {{book.isbn}}
+        Condition: {{book.cond}}
+        Age: {{book.bname}}
+        Owner: {{book.seller.uname}}
+        Price: {{book.price}}
+        {%if (current_user==book.seller)%}
+            <a href="/books/{{book.id}}/update"><button type="button" class="btn btn-primary">Update</button></a>
+            <a href="{{url_for('del_book', id=book.id)}}"><button type="button" class="btn btn-danger">Delete</button></a>
+        {%else%}
+            {%if (book.sell==1)%}
+                <a href="/buy/{{book.id}}"><button type="button" class="btn btn-primary">Buy</button></a>
+            {%endif%}
+            {%if (book.sell==1)%}
+                <a href="#"><button type="button" class="btn btn-primary">Exchange</button></a>
+            {%endif%}
+        {%endif%}
+    </div>
+{%endblock%}
