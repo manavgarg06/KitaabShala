@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%block title%}
+Update Account
+{%endblock%}
+
+{%block content%}
+<div class="container">
+    <form method="POST">
+
+        {{ form.hidden_tag() }}
+        
+        {{form.uname.label()}}
+        {{form.uname(class='form-control')}}
+    
+        {{form.email.label()}}
+        {{form.email(class='form-control')}}
+    
+        {{form.addr.label()}}
+        {{form.addr(class='form-control')}}
+    
+    
+        {{form.submit(class='form-control')}}
+    
+    </form>
+</div>
+{%endblock%}
