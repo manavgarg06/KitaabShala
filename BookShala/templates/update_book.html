@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block title%}
+    Update {{book.id}}
+{%endblock%}
+{%block content%}
+<div class="container">
+    <form method="POST">
+        {{form.hidden_tag()}}
+
+        {{form.bname.label()}}
+        {{form.bname(class='form-control')}}
+    
+        {{form.isbn.label()}}
+        {{form.isbn(class='form-control')}}
+    
+        {{form.dop.label()}}
+        {{form.dop(class='form-control')}}
+    
+        {{form.cond.label()}}
+        {{form.cond(class='form-control')}}
+        
+        {{form.opt.label()}}
+        {{form.opt(class='form-control')}}
+    
+        {{form.price.label()}}
+        {{form.price(class='form-control')}}
+    
+        {{form.submit(class='form-control')}}
+    
+    </form>
+</div>
+
+{%endblock%}
