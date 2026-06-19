@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block content%}
+    {%if not(current_user.is_authenticated)%}
+        <form method="POST">
+            {{form.hidden_tag()}}
+
+            {{form.email.label()}}
+            {{form.email(class='form-control')}}
+
+            {{form.submit(class='form-control')}}
+        </form>
+        
+    {%endif%}
+    <p text='center'>A link will be sent to your email id if it exists.</p>
+{%endblock%}
